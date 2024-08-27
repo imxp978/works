@@ -6,7 +6,7 @@ import ScrollyVideo from 'scrolly-video/dist/ScrollyVideo.vue';
 
 import { createApp, ref, onMounted } from 'vue';
 const blurValues = ref([]);
-const grayValues = ref([]);
+// const grayValues = ref([]);
 const saturationValues = ref([]);
 const dynamicColors = ref([]);
 const showGoTop = ref(false);
@@ -88,7 +88,7 @@ function handleScroll() {
       blurValues.value[index] = 10 * (1 - visibleRatio);
 
       // grayscale
-      grayValues.value[index] = 0 + (1 - visibleRatio); 
+      // grayValues.value[index] = 0 + (1 - visibleRatio); 
       
       // saturation
       saturationValues.value[index] = (visibleRatio);
@@ -99,7 +99,7 @@ function handleScroll() {
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
   AOS.init();
-  // document.documentElement.style.scrollBehavior = "smooth";
+  document.documentElement.style.scrollBehavior = "smooth";
 });
 </script>
 
